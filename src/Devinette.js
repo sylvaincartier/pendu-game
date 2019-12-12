@@ -14,7 +14,7 @@ class Devinette extends React.Component {
 
     render() {
         return (
-            <div>{this.word.map((letter, index) => (<span key={index} className="letter">{ letter }</span>))}</div>
+            <div className="devine">{this.word.map((letter, index) => (<span key={index} className="letter">{ letter }</span>))}</div>
         )
     }
 }
