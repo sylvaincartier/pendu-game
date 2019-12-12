@@ -4,14 +4,14 @@ import Clavier from './Clavier'
 import Devinette from './Devinette'
 import { getForkTsCheckerWebpackPluginHooks } from 'fork-ts-checker-webpack-plugin/lib/hooks';
 
-const WORD_TO_DEVINE = "MAISONS";
+const WORD_TO_DEVINE = ["MAISONS", "ETUDE", "ARBRE", "DICTIONNAIRE", "SAPIN", "CADEAUX", "TABLE", "ORDINATEUR", "BUREAU"];
 const CHAR_GUESS = "_";
 
 class App extends React.Component {
 
   state = {
     keyboard: this.createKeyboard(),
-    wordToDevined: WORD_TO_DEVINE,
+    wordToDevined: this.createWord(),
     usedLetters: [],
     won: false,
   };
@@ -55,13 +55,19 @@ class App extends React.Component {
     return letters;
   }
 
+  createWord() {
+    return WORD_TO_DEVINE[getRandomInt(WORD_TO_DEVINE.length)];
+  }
+
   resetGame = () => {
-    this.setState({usedLetters: [], won: false})
+    this.setState({usedLetters: [], won: false, wordToDevined: this.createWord()})
   }
 
 }
 
-
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
 
 export default App;
