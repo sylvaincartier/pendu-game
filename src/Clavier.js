@@ -12,7 +12,7 @@ class Clavier extends React.Component {
         this.usedLetters = usedLetters;
     }
 
-    componentWillUpdate({usedLetters}) {
+    UNSAFE_componentWillUpdate({usedLetters}) {
         this.usedLetters = usedLetters;
     }
 

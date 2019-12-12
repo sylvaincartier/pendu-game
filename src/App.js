@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 import Clavier from './Clavier'
 import Devinette from './Devinette'
-import { getForkTsCheckerWebpackPluginHooks } from 'fork-ts-checker-webpack-plugin/lib/hooks';
 
 const WORD_TO_DEVINE = ["MAISONS", "ETUDE", "ARBRE", "DICTIONNAIRE", "SAPIN", "CADEAUX", "TABLE", "ORDINATEUR", "BUREAU"];
 const CHAR_GUESS = "_";
@@ -34,7 +33,6 @@ class App extends React.Component {
    }
 
   checkWon(wordToDevined, usedLetters) {
-    console.log('wordToDevined', wordToDevined, 'usedLetters', usedLetters);
     if(Array.from(wordToDevined).every((letter) => usedLetters.includes(letter))) {
       this.setState({ won: true })
     }
