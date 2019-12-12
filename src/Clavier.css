@@ -1,0 +1,20 @@
+
+.clavier {
+    margin-top: 50px;
+
+}
+
+.clavier .letterClavier {
+    display: inline-block;
+    width: 20px;
+    line-height: 30px;
+    margin: 1px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.letterClavier.disable {
+    background-color: lightgray;
+    color: white;
+    border: white;
+}
